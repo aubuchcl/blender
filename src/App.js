@@ -8,7 +8,7 @@ import Toaster from "./Toasters/Toaster";
 
 // Set up apollo client
 const client = new ApolloClient({
-  uri: "http://wordpress/graphql"
+  uri: "https://chrisaubuchon.com/graphql"
 });
 
 function App() {

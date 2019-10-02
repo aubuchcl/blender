@@ -20,7 +20,7 @@ const Toasters = () => (
   >
     {/* object available to render data */}
     {({ loading, error, data }) => {
-      if (loading) {
+      while (loading || error) {
         return <h1>Loading...</h1>;
       }
 
