@@ -3,11 +3,11 @@ import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { Link } from "react-router-dom";
 
-const Toasters = () => (
+const Blenders = () => (
   <Query
     query={gql`
       {
-        toasters {
+        blenders {
           edges {
             node {
               title
@@ -26,12 +26,12 @@ const Toasters = () => (
 
       return (
         <div>
-          {data.toasters.edges.map((toaster, key) => {
+          {data.blenders.edges.map((blender, key) => {
             return (
               <div key={key}>
-                <h2>{toaster.node.title}</h2>
-                <Link to={`/toaster/${toaster.node.slug}`}>
-                  {toaster.node.slug} Learn More
+                <h2>{blender.node.title}</h2>
+                <Link to={`/blender/${blender.node.slug}`}>
+                  {blender.node.slug} Learn More
                 </Link>
               </div>
             );
@@ -42,4 +42,4 @@ const Toasters = () => (
   </Query>
 );
 
-export default Toasters;
+export default Blenders;

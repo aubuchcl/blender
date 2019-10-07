@@ -3,8 +3,8 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Toasters from "./Toasters/Toasters";
-import Toaster from "./Toasters/Toaster";
+import Blenders from "./Blenders/Blenders";
+import Blender from "./Blenders/Blender";
 
 // Set up apollo client
 const client = new ApolloClient({
@@ -17,12 +17,12 @@ function App() {
       <BrowserRouter>
         <div>
           <header>
-            <h1>Toaster Review site</h1>
+            <h1>Blender Review site</h1>
           </header>
           <div className="content">
-            <Route exact path="/" component={Toasters} />
-            <Route path="/toasters" component={Toasters} />
-            <Route path="/toaster/:slug" component={Toaster} />
+            <Route exact path="/" component={Blenders} />
+            <Route path="/blenders" component={Blenders} />
+            <Route path="/blender/:slug" component={Blender} />
           </div>
         </div>
       </BrowserRouter>

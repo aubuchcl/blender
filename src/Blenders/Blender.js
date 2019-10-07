@@ -3,36 +3,36 @@ import React, { Component } from "react";
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 
-class Toaster extends Component {
+class Blender extends Component {
   render() {
     const props = this.props;
     console.log({ props });
-    if (!props.data.toaster) {
+    if (!props.data.blender) {
       return <p>Loadings</p>;
     }
     return (
       <div>
-        <h2>{props.data.toaster.title}</h2>
+        <h2>{props.data.blender.title}</h2>
         <p>
           Price -> $
           <strong style={{ color: "green" }}>
-            {props.data.toaster.toasterMeta.price}
+            {props.data.blender.blenderMeta.price}
           </strong>
         </p>
 
         <p>
-          Watts -> <strong>{props.data.toaster.toasterMeta.watts}</strong>
+          Watts -> <strong>{props.data.blender.blenderMeta.watts}</strong>
         </p>
       </div>
     );
   }
 }
 
-const GetToasterBySlug = gql`
-  query getToasterBySlug($slug: String) {
-    toaster: toasterBy(uri: $slug) {
+const GetBlenderBySlug = gql`
+  query getBlenderBySlug($slug: String) {
+    blender: blenderBy(uri: $slug) {
       title
-      toasterMeta {
+      blenderMeta {
         price
         watts
       }
@@ -40,7 +40,7 @@ const GetToasterBySlug = gql`
   }
 `;
 
-export default graphql(GetToasterBySlug, {
+export default graphql(GetBlenderBySlug, {
   options: props => {
     const slug = props.match.params.slug;
     return {
@@ -49,7 +49,7 @@ export default graphql(GetToasterBySlug, {
       }
     };
   }
-})(Toaster);
+})(Blender);
 
 // normal export`
-// export default Toaster
+// export default Blender
