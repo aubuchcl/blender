@@ -8,7 +8,8 @@ import Blender from "./Blenders/Blender";
 
 // Set up apollo client
 const client = new ApolloClient({
-  uri: "https://chrisaubuchon.com/graphql"
+  uri:
+    "http://wordpress-5da0c65aa99b6b00011667c6.c.5c884882a99b6b00017e8f03.cycle.io/graphql"
 });
 
 function App() {
